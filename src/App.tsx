@@ -26,7 +26,10 @@ const App = () => {
     amount: "",
   })
   const [selectedDonationAmount, setSelectedDonationAmount] = useState("")
-  const [formSubmissions, setFormSubmissions] = useState({
+  const [formSubmissions, setFormSubmissions] = useState<{
+    contact: { isSubmitting: boolean; isSubmitted: boolean; error: string | null }
+    donation: { isSubmitting: boolean; isSubmitted: boolean; error: string | null }
+  }>({
     contact: { isSubmitting: false, isSubmitted: false, error: null },
     donation: { isSubmitting: false, isSubmitted: false, error: null },
   })

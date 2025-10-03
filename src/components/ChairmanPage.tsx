@@ -1,5 +1,3 @@
-import type React from "react"
-
 const ChairmanPage = ({ onBack }: { onBack: () => void }) => {
   return (
     <div className="bg-white text-gray-800 py-20 px-4 sm:px-6 lg:px-8">
