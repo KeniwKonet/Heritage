@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
 import LearnMorePages from "./components/LearnMorePages"
+import ChairmanPage from "./components/ChairmanPage"
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState("home")
@@ -29,6 +30,7 @@ const App = () => {
     contact: { isSubmitting: false, isSubmitted: false, error: null },
     donation: { isSubmitting: false, isSubmitted: false, error: null },
   })
+  const [copiedTooltip, setCopiedTooltip] = useState<string | null>(null)
 
   // Create refs for each section
   const heroRef = useRef<HTMLElement>(null)
@@ -42,19 +44,24 @@ const App = () => {
   // Testimonials data
   const testimonials = [
     {
-      text: "Omo Oduduwa Global Heritage has transformed how we experience Yoruba culture. Their events are breathtaking!",
-      author: "Adeola Bankole",
-      role: "Cultural Enthusiast",
+      text: "For testimony",
+      author: "Otunba Samson A.Agboola",
+      role: "SSG to Ileoluji Okeigbo local government",
     },
     {
-      text: "The preservation work they do is invaluable. Our children will thank us for supporting this organization.",
-      author: "Dr. Funke Adebayo",
-      role: "Historian & Educator",
+      text: "For testimony",
+      author: "Oba Adeyeye Enitan Ogunwusi",
+      role: "Ooni of Ife",
     },
     {
-      text: "As an artist, I've found a true home here. The support and platform they provide is unmatched.",
-      author: "Tunde Ogunlana",
-      role: "Visual Artist",
+      text: "For testimony",
+      author: "The Royal Grand father",
+      role: "Hon.Engr.Festus Adefiranye",
+    },
+    {
+      text: "For testimony",
+      author: "MHR, Ileoluji/Okeigbo/Odigbo fed.Constituency",
+      role: "Prince Tunde Fisayo",
     },
   ]
 
@@ -307,7 +314,7 @@ const App = () => {
       {/* Background Image with Gradient Overlay - Fixed */}
       <div className="absolute inset-0">
         <img
-          src="https://placehold.co/1920x1080/black/white?text=Traditional+Yoruba+Culture"
+          src="https://images.unsplash.com/photo-1632948056627-41482f69c38c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8eW9ydWJhfGVufDB8fDB8fHww"
           alt="Traditional Yoruba Culture"
           className="w-full h-full object-cover"
         />
@@ -397,7 +404,7 @@ const App = () => {
           </div>
           <div className="w-full lg:w-1/2 flex justify-center">
             <img
-              src="https://placehold.co/600x800/white/black?text=Yoruba+Drum"
+              src="https://images.unsplash.com/photo-1665646155658-bdcd66e854db?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8eW9ydWJhfGVufDB8fDB8fHww"
               alt="Yoruba Cultural Artifact"
               className="w-64 sm:w-80 md:w-96 h-auto object-contain rounded-2xl shadow-2xl border-4 border-amber-200"
             />
@@ -811,9 +818,9 @@ const App = () => {
                   <p className="text-gray-600 select-all">Omo Oduduwa Global Heritage Ltd</p>
                   <button
                     onClick={() => copyToClipboard("Omo Oduduwa Global Heritage Ltd", "Account Name")}
-                    className="text-blue-600 hover:text-blue-800 text-xs underline"
+                    className="text-blue-600 hover:text-blue-800 text-xs underline relative"
                   >
-                    Copy
+                    {copiedTooltip === "Account Name" ? "Copied!" : "Copy"}
                   </button>
                 </div>
               </div>
@@ -823,9 +830,9 @@ const App = () => {
                   <p className="text-gray-600 select-all">First Bank of Nigeria</p>
                   <button
                     onClick={() => copyToClipboard("First Bank of Nigeria", "Bank Name")}
-                    className="text-blue-600 hover:text-blue-800 text-xs underline"
+                    className="text-blue-600 hover:text-blue-800 text-xs underline relative"
                   >
-                    Copy
+                    {copiedTooltip === "Bank Name" ? "Copied!" : "Copy"}
                   </button>
                 </div>
               </div>
@@ -835,9 +842,9 @@ const App = () => {
                   <p className="text-gray-600 font-mono select-all">2034567890</p>
                   <button
                     onClick={() => copyToClipboard("2034567890", "Account Number")}
-                    className="text-blue-600 hover:text-blue-800 text-xs underline"
+                    className="text-blue-600 hover:text-blue-800 text-xs underline relative"
                   >
-                    Copy
+                    {copiedTooltip === "Account Number" ? "Copied!" : "Copy"}
                   </button>
                 </div>
               </div>
@@ -847,9 +854,9 @@ const App = () => {
                   <p className="text-gray-600 font-mono select-all">011-152-003</p>
                   <button
                     onClick={() => copyToClipboard("011-152-003", "Sort Code")}
-                    className="text-blue-600 hover:text-blue-800 text-xs underline"
+                    className="text-blue-600 hover:text-blue-800 text-xs underline relative"
                   >
-                    Copy
+                    {copiedTooltip === "Sort Code" ? "Copied!" : "Copy"}
                   </button>
                 </div>
               </div>
@@ -863,9 +870,9 @@ Account Number: 2034567890
 Sort Code: 011-152-003`
                   copyToClipboard(allDetails, "All Account Details")
                 }}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-300"
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-300 relative"
               >
-                Copy All Details
+                {copiedTooltip === "All Account Details" ? "Copied!" : "Copy All Details"}
               </button>
             </div>
             <div className="mt-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
@@ -1015,23 +1022,23 @@ Sort Code: 011-152-003`
               {[
                 {
                   icon: "📍",
-                  title: "Headquarters",
-                  content: "123 Oduduwa Street\nIle-Ife, Osun State\nNigeria",
-                  link: "https://maps.google.com/?q=123+Oduduwa+Street,+Ile-Ife,+Osun+State,+Nigeria",
+                  title: "Office Address",
+                  content: "29, Salau Rasaq street Ikorodu Lagos State",
+                  link: "https://maps.google.com/?q=29,+Salau+Rasaq+street+Ikorodu+Lagos+State",
                   isClickable: true,
                 },
                 {
                   icon: "📞",
                   title: "Phone",
-                  content: "+234 800 000 0000",
-                  link: "tel:+2348000000000",
+                  content: "08100355606\n09022089999",
+                  link: "tel:08100355606",
                   isClickable: true,
                 },
                 {
                   icon: "✉️",
                   title: "Email",
-                  content: "info@omooduduwa.org",
-                  link: "mailto:info@omooduduwa.org?subject=Inquiry%20from%20Website",
+                  content: "omooduduwaheritage@gmail.com",
+                  link: "mailto:omooduduwaheritage@gmail.com?subject=Inquiry%20from%20Website",
                   isClickable: true,
                 },
                 {
@@ -1242,7 +1249,8 @@ Sort Code: 011-152-003`
     navigator.clipboard
       .writeText(text)
       .then(() => {
-        alert(`${label} copied to clipboard!`)
+        setCopiedTooltip(label)
+        setTimeout(() => setCopiedTooltip(null), 2000)
       })
       .catch(() => {
         // Fallback for older browsers
@@ -1250,9 +1258,14 @@ Sort Code: 011-152-003`
         textArea.value = text
         document.body.appendChild(textArea)
         textArea.select()
-        document.execCommand("copy")
+        try {
+          document.execCommand("copy")
+          setCopiedTooltip(label)
+          setTimeout(() => setCopiedTooltip(null), 2000)
+        } catch (err) {
+          console.error("Fallback copy failed", err)
+        }
         document.body.removeChild(textArea)
-        alert(`${label} copied to clipboard!`)
       })
   }
 
@@ -1261,6 +1274,10 @@ Sort Code: 011-152-003`
     ["preservation", "diversity", "education", "artists", "community", "innovation"].includes(currentPage)
   ) {
     return <LearnMorePages page={currentPage} onBack={returnToHome} />
+  }
+
+  if (currentPage === "chairman") {
+    return <ChairmanPage onBack={returnToHome} />
   }
 
   return (
@@ -1293,6 +1310,7 @@ Sort Code: 011-152-003`
               <NavItem page="membership" label="Membership" onClick={() => scrollToSection("membership")} />
               <NavItem page="donate" label="Donate" onClick={() => scrollToSection("donate")} />
               <NavItem page="contact" label="Contact" onClick={() => scrollToSection("contact")} />
+              <NavItem page="chairman" label="Meet Our Chairman" onClick={() => setCurrentPage("chairman")} />
               <button
                 onClick={() => scrollToSection("contact")}
                 className="px-6 py-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
@@ -1380,6 +1398,15 @@ Sort Code: 011-152-003`
                   className="text-left px-4 py-2 text-white hover:bg-amber-700 rounded-md transition-colors duration-300"
                 >
                   Contact
+                </button>
+                <button
+                  onClick={() => {
+                    setCurrentPage("chairman")
+                    setIsMenuOpen(false)
+                  }}
+                  className="text-left px-4 py-2 text-white hover:bg-amber-700 rounded-md transition-colors duration-300"
+                >
+                  Meet Our Chairman
                 </button>
                 <button
                   onClick={() => {
@@ -1504,25 +1531,25 @@ Sort Code: 011-152-003`
               <div className="space-y-3 text-amber-200">
                 <div>
                   <a
-                    href="https://maps.google.com/?q=123+Oduduwa+Street,+Ile-Ife,+Nigeria"
+                    href="https://maps.google.com/?q=29,+Salau+Rasaq+street+Ikorodu+Lagos+State"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors duration-300"
                   >
-                    📍 123 Oduduwa Street, Ile-Ife, Nigeria
+                    📍 29, Salau Rasaq street Ikorodu Lagos State
                   </a>
                 </div>
                 <div>
-                  <a href="tel:+2348000000000" className="hover:text-white transition-colors duration-300">
-                    📞 +234 800 000 0000
+                  <a href="tel:08100355606" className="hover:text-white transition-colors duration-300">
+                    📞 08100355606
                   </a>
                 </div>
                 <div>
                   <a
-                    href="mailto:info@omooduduwa.org?subject=Inquiry%20from%20Website"
+                    href="mailto:omooduduwaheritage@gmail.com?subject=Inquiry%20from%20Website"
                     className="hover:text-white transition-colors duration-300"
                   >
-                    ✉️ info@omooduduwa.org
+                    ✉️ omooduduwaheritage@gmail.com
                   </a>
                 </div>
                 <div>🕒 Mon-Fri: 9am-5pm</div>
