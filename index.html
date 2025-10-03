@@ -54,6 +54,7 @@
         .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
         .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
         .gap-4 { gap: 1rem; }
         .gap-6 { gap: 1.5rem; }
         .gap-8 { gap: 2rem; }
@@ -432,6 +433,7 @@
                 </div>
                 <div class="desktop-nav items-center space-x-2">
                     <button class="nav-item" onclick="scrollToSection('home')" data-section="home">Home</button>
+                    <button class="nav-item" onclick="showLearnMore('chairman')" data-section="chairman">Our Chairman</button>
                     <button class="nav-item" onclick="scrollToSection('commitments')" data-section="commitments">Commitments</button>
                     <button class="nav-item" onclick="scrollToSection('events')" data-section="events">Events</button>
                     <button class="nav-item" onclick="scrollToSection('testimonials')" data-section="testimonials">Testimonials</button>
@@ -451,6 +453,7 @@
             <div id="mobile-menu" class="mobile-menu">
                 <div style="display: flex; flex-direction: column; gap: 0.5rem; padding: 0 1rem;">
                     <button onclick="scrollToSection('home'); closeMobileMenu();">Home</button>
+                    <button onclick="showLearnMore('chairman'); closeMobileMenu();">Our Chairman</button>
                     <button onclick="scrollToSection('commitments'); closeMobileMenu();">Commitments</button>
                     <button onclick="scrollToSection('events'); closeMobileMenu();">Events</button>
                     <button onclick="scrollToSection('testimonials'); closeMobileMenu();">Testimonials</button>
@@ -719,7 +722,7 @@
                 <div class="text-center mb-16" style="max-width: 64rem; margin: 0 auto;">
                     <h2 class="text-4xl md:text-5xl font-bold text-amber-900 mb-4 font-display">What Our Community Says</h2>
                     <p class="text-lg text-gray-700">
-                        Hear from the artists, educators, and cultural enthusiasts who are part of our vibrant community.
+                        Hear from the leaders, educators, and cultural enthusiasts who support our mission.
                     </p>
                 </div>
 
@@ -728,16 +731,17 @@
                     <div id="main-testimonial" class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-teal-200 relative">
                         <div class="absolute top-6 left-6 text-6xl text-teal-200 font-serif">"</div>
                         <div class="relative z-10">
+                             
                             <blockquote id="testimonial-text" class="text-xl md:text-2xl text-gray-800 leading-relaxed mb-8 font-cultural italic pl-8">
-                                Omo Oduduwa Global Heritage has transformed how we experience Yoruba culture. Their events are breathtaking!
+                                The work of Omo Oduduwa Global Heritage in preserving our cultural heritage is commendable and deserves our full support.
                             </blockquote>
                             <div class="flex items-center justify-center">
                                 <div class="text-center">
                                     <div id="testimonial-avatar" class="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-xl mb-4 mx-auto" style="background: linear-gradient(135deg, #fbbf24, #d97706);">
-                                        AB
+                                        SA
                                     </div>
-                                    <h4 id="testimonial-author" class="text-xl font-bold text-amber-900 mb-1">Adeola Bankole</h4>
-                                    <p id="testimonial-role" class="text-teal-600 font-medium">Cultural Enthusiast</p>
+                                    <h4 id="testimonial-author" class="text-xl font-bold text-amber-900 mb-1">Otunba Samson A.Agboola</h4>
+                                    <p id="testimonial-role" class="text-teal-600 font-medium">SSG to Ileoluji Okeigbo Local Government</p>
                                 </div>
                             </div>
                         </div>
@@ -748,53 +752,70 @@
                         <button class="testimonial-dot w-3 h-3 rounded-full transition-all bg-amber-600" onclick="setTestimonial(0)" data-index="0"></button>
                         <button class="testimonial-dot w-3 h-3 rounded-full transition-all bg-gray-300" onclick="setTestimonial(1)" data-index="1"></button>
                         <button class="testimonial-dot w-3 h-3 rounded-full transition-all bg-gray-300" onclick="setTestimonial(2)" data-index="2"></button>
+                        <button class="testimonial-dot w-3 h-3 rounded-full transition-all bg-gray-300" onclick="setTestimonial(3)" data-index="3"></button>
                     </div>
                 </div>
 
                  All Testimonials Grid 
-                <div class="grid md:grid-cols-3 gap-8">
+                 
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="testimonial-card bg-white p-6 rounded-xl shadow-lg border border-teal-100 active" onclick="setTestimonial(0)" data-index="0">
                         <div class="text-3xl text-teal-400 mb-4">"</div>
                         <blockquote class="text-gray-700 mb-6 leading-relaxed">
-                            Omo Oduduwa Global Heritage has transformed how we experience Yoruba culture. Their events are breathtaking!
+                            The work of Omo Oduduwa Global Heritage in preserving our cultural heritage is commendable and deserves our full support.
                         </blockquote>
                         <div class="flex items-center">
                             <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4" style="background: linear-gradient(135deg, #fbbf24, #d97706);">
-                                AB
+                                SA
                             </div>
                             <div>
-                                <h4 class="font-bold text-amber-900">Adeola Bankole</h4>
-                                <p class="text-sm text-teal-600">Cultural Enthusiast</p>
+                                <h4 class="font-bold text-amber-900">Otunba Samson A.Agboola</h4>
+                                <p class="text-sm text-teal-600">SSG to Ileoluji Okeigbo LG</p>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card bg-white p-6 rounded-xl shadow-lg border border-teal-100" onclick="setTestimonial(1)" data-index="1">
                         <div class="text-3xl text-teal-400 mb-4">"</div>
                         <blockquote class="text-gray-700 mb-6 leading-relaxed">
-                            The preservation work they do is invaluable. Our children will thank us for supporting this organization.
+                            I commend the efforts of Omo Oduduwa Global Heritage in promoting and preserving our rich Yoruba cultural heritage for future generations.
                         </blockquote>
                         <div class="flex items-center">
                             <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4" style="background: linear-gradient(135deg, #fbbf24, #d97706);">
-                                FA
+                                OO
                             </div>
                             <div>
-                                <h4 class="font-bold text-amber-900">Dr. Funke Adebayo</h4>
-                                <p class="text-sm text-teal-600">Historian & Educator</p>
+                                <h4 class="font-bold text-amber-900">Oba Adeyeye Enitan Ogunwusi</h4>
+                                <p class="text-sm text-teal-600">Ooni of Ife, The Royal Grandfather</p>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card bg-white p-6 rounded-xl shadow-lg border border-teal-100" onclick="setTestimonial(2)" data-index="2">
                         <div class="text-3xl text-teal-400 mb-4">"</div>
                         <blockquote class="text-gray-700 mb-6 leading-relaxed">
-                            As an artist, I've found a true home here. The support and platform they provide is unmatched.
+                            This organization is doing exceptional work in cultural preservation. I fully support their mission and encourage others to do the same.
                         </blockquote>
                         <div class="flex items-center">
                             <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4" style="background: linear-gradient(135deg, #fbbf24, #d97706);">
-                                TO
+                                FA
                             </div>
                             <div>
-                                <h4 class="font-bold text-amber-900">Tunde Ogunlana</h4>
-                                <p class="text-sm text-teal-600">Visual Artist</p>
+                                <h4 class="font-bold text-amber-900">Hon. Engr. Festus Adefiranye</h4>
+                                <p class="text-sm text-teal-600">MHR, Ileoluji/Okeigbo/Odigbo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card bg-white p-6 rounded-xl shadow-lg border border-teal-100" onclick="setTestimonial(3)" data-index="3">
+                        <div class="text-3xl text-teal-400 mb-4">"</div>
+                        <blockquote class="text-gray-700 mb-6 leading-relaxed">
+                            Omo Oduduwa Global Heritage is a beacon of cultural excellence. Their dedication to our heritage is truly inspiring.
+                        </blockquote>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4" style="background: linear-gradient(135deg, #fbbf24, #d97706);">
+                                TF
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-amber-900">Prince Tunde Fisayo</h4>
+                                <p class="text-sm text-teal-600">Chairman, AURORA</p>
                             </div>
                         </div>
                     </div>
@@ -1084,7 +1105,7 @@
                             </div>
                         </div>
 
-                        <div id="donation-error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg mb-6 hidden"></div>
+                        <div id="donation-error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg hidden"></div>
 
                         <button type="submit" id="donation-submit" class="w-full px-8 py-4 bg-red-600 text-white font-bold text-lg rounded-full transition-all transform">
                             Complete Donation
@@ -1122,9 +1143,10 @@
                             <div class="flex items-start">
                                 <div class="text-2xl text-green-600 mr-4">📍</div>
                                 <div>
-                                    <h3 class="text-lg font-bold text-amber-900 mb-1">Headquarters</h3>
-                                    <a href="https://maps.google.com/?q=123+Oduduwa+Street,+Ile-Ife,+Osun+State,+Nigeria" target="_blank" rel="noopener noreferrer" class="text-gray-700 transition-colors" style="white-space: pre-line;">123 Oduduwa Street
-Ile-Ife, Osun State
+                                    <h3 class="text-lg font-bold text-amber-900 mb-1">Office Address</h3>
+                                     
+                                    <a href="https://maps.google.com/?q=29+Salau+Rasaq+street+Ikorodu+Lagos+State" target="_blank" rel="noopener noreferrer" class="text-gray-700 transition-colors" style="white-space: pre-line;">29, Salau Rasaq street
+Ikorodu, Lagos State
 Nigeria</a>
                                 </div>
                             </div>
@@ -1132,14 +1154,17 @@ Nigeria</a>
                                 <div class="text-2xl text-green-600 mr-4">📞</div>
                                 <div>
                                     <h3 class="text-lg font-bold text-amber-900 mb-1">Phone</h3>
-                                    <a href="tel:+2348000000000" class="text-gray-700 transition-colors">+234 800 000 0000</a>
+                                     
+                                    <a href="tel:+2348100355606" class="text-gray-700 transition-colors block">+234 810 035 5606</a>
+                                    <a href="tel:+2349022089999" class="text-gray-700 transition-colors block">+234 902 208 9999</a>
                                 </div>
                             </div>
                             <div class="flex items-start">
                                 <div class="text-2xl text-green-600 mr-4">✉️</div>
                                 <div>
                                     <h3 class="text-lg font-bold text-amber-900 mb-1">Email</h3>
-                                    <a href="mailto:info@omooduduwa.org?subject=Inquiry%20from%20Website" class="text-gray-700 transition-colors">info@omooduduwa.org</a>
+                                     
+                                    <a href="mailto:omooduduwaheritage@gmail.com?subject=Inquiry%20from%20Website" class="text-gray-700 transition-colors">omooduduwaheritage@gmail.com</a>
                                 </div>
                             </div>
                             <div class="flex items-start">
@@ -1153,7 +1178,8 @@ Sunday: Closed</p>
                             </div>
                         </div>
                         <div class="flex space-x-4">
-                            <a href="https://wa.me/2348000000000?text=Hello%20Omo%20Oduduwa%20Global%20Heritage" target="_blank" rel="noopener noreferrer" title="WhatsApp" class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 transition-all transform">📱</a>
+                             
+                            <a href="https://wa.me/2348100355606?text=Hello%20Omo%20Oduduwa%20Global%20Heritage" target="_blank" rel="noopener noreferrer" title="WhatsApp" class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 transition-all transform">📱</a>
                             <a href="https://facebook.com/omooduduwa" target="_blank" rel="noopener noreferrer" title="Facebook" class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 transition-all transform">📘</a>
                             <a href="https://instagram.com/omooduduwa" target="_blank" rel="noopener noreferrer" title="Instagram" class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 transition-all transform">📸</a>
                             <a href="https://youtube.com/@omooduduwa" target="_blank" rel="noopener noreferrer" title="YouTube" class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 transition-all transform">🎬</a>
@@ -1210,7 +1236,7 @@ Sunday: Closed</p>
                     <div class="grid md:grid-cols-2 gap-8">
                         <div>
                             <h4 class="text-lg font-bold text-green-900 mb-2">How can I volunteer with your organization?</h4>
-                            <p class="text-gray-700">We welcome volunteers for our events, educational programs, and administrative support. Please fill out our volunteer application form on our website or contact our volunteer coordinator at <a href="mailto:volunteer@omooduduwa.org?subject=Inquiry%20from%20Website" class="text-amber-600 transition-colors">volunteer@omooduduwa.org</a></p>
+                            <p class="text-gray-700">We welcome volunteers for our events, educational programs, and administrative support. Please fill out our volunteer application form on our website or contact our volunteer coordinator at <a href="mailto:volunteer@omooduduwa.org?subject=Inquiry%20from%20Website" class="text-amber-600 transition-colors">omooduduwaheritage@gmail.com</a></p>
                         </div>
                         <div>
                             <h4 class="text-lg font-bold text-green-900 mb-2">Do you offer internships?</h4>
@@ -1218,11 +1244,11 @@ Sunday: Closed</p>
                         </div>
                         <div>
                             <h4 class="text-lg font-bold text-green-900 mb-2">Can I donate artifacts or artworks?</h4>
-                            <p class="text-gray-700">We are honored when individuals wish to donate cultural items to our collection. Please contact our curatorial team at <a href="mailto:collections@omooduduwa.org?subject=Inquiry%20from%20Website" class="text-amber-600 transition-colors">collections@omooduwa.org</a> to discuss potential donations.</p>
+                            <p class="text-gray-700">We are honored when individuals wish to donate cultural items to our collection. Please contact our curatorial team at <a href="mailto:collections@omooduduwa.org?subject=Inquiry%20from%20Website" class="text-amber-600 transition-colors">omooduduwaheritage@gmail.com</a> to discuss potential donations.</p>
                         </div>
                         <div>
                             <h4 class="text-lg font-bold text-green-900 mb-2">How can I bring your programs to my community?</h4>
-                            <p class="text-gray-700">We love partnering with communities! Please contact our community engagement team at <a href="mailto:community@omooduduwa.org?subject=Inquiry%20from%20Website" class="text-amber-600 transition-colors">community@omooduduwa.org</a> to discuss possibilities for collaboration.</p>
+                            <p class="text-gray-700">We love partnering with communities! Please contact our community engagement team at <a href="mailto:community@omooduduwa.org?subject=Inquiry%20from%20Website" class="text-amber-600 transition-colors">omooduduwaheritage@gmail.com</a> to discuss possibilities for collaboration.</p>
                         </div>
                     </div>
                 </div>
@@ -1298,7 +1324,6 @@ Sunday: Closed</p>
         </div>
     </div>
 
-     Continue with other Learn More pages... 
     <div id="learn-more-education" class="learn-more-page">
         <div class="container py-20">
             <button onclick="returnToHome()" class="mb-8 px-6 py-3 bg-amber-600 text-white font-semibold rounded-full transition-all">← Back to Home</button>
@@ -1444,7 +1469,7 @@ Sunday: Closed</p>
                         Preserving the rich cultural heritage of the Yoruba people while fostering creativity, diversity, and community engagement.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="https://wa.me/2348000000000?text=Hello%20Omo%20Oduduwa%20Global%20Heritage" target="_blank" rel="noopener noreferrer" title="WhatsApp" class="w-10 h-10 bg-amber-800 rounded-full flex items-center justify-center transition-all transform">📱</a>
+                        <a href="https://wa.me/2348100355606?text=Hello%20Omo%20Oduduwa%20Global%20Heritage" target="_blank" rel="noopener noreferrer" title="WhatsApp" class="w-10 h-10 bg-amber-800 rounded-full flex items-center justify-center transition-all transform">📱</a>
                         <a href="https://facebook.com/omooduduwa" target="_blank" rel="noopener noreferrer" title="Facebook" class="w-10 h-10 bg-amber-800 rounded-full flex items-center justify-center transition-all transform">📘</a>
                         <a href="https://instagram.com/omooduduwa" target="_blank" rel="noopener noreferrer" title="Instagram" class="w-10 h-10 bg-amber-800 rounded-full flex items-center justify-center transition-all transform">📸</a>
                         <a href="https://youtube.com/@omooduduwa" target="_blank" rel="noopener noreferrer" title="YouTube" class="w-10 h-10 bg-amber-800 rounded-full flex items-center justify-center transition-all transform">🎬</a>
@@ -1454,6 +1479,7 @@ Sunday: Closed</p>
                     <h4 class="text-lg font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
                         <li><button onclick="scrollToSection('home')" class="text-amber-200 transition-colors">Home</button></li>
+                        <li><button onclick="showLearnMore('chairman')" class="text-amber-200 transition-colors">Our Chairman</button></li>
                         <li><button onclick="scrollToSection('commitments')" class="text-amber-200 transition-colors">Commitments</button></li>
                         <li><button onclick="scrollToSection('events')" class="text-amber-200 transition-colors">Events</button></li>
                         <li><button onclick="scrollToSection('testimonials')" class="text-amber-200 transition-colors">Testimonials</button></li>
@@ -1465,6 +1491,7 @@ Sunday: Closed</p>
                 <div>
                     <h4 class="text-lg font-bold mb-4">Commitments</h4>
                     <ul class="space-y-2">
+                        <li><button onclick="showLearnMore('chairman')" class="text-amber-200 transition-colors text-sm">Meet Our Chairman</button></li>
                         <li><button onclick="showLearnMore('preservation')" class="text-amber-200 transition-colors text-sm">Preservation</button></li>
                         <li><button onclick="showLearnMore('diversity')" class="text-amber-200 transition-colors text-sm">Diversity & Inclusion</button></li>
                         <li><button onclick="showLearnMore('education')" class="text-amber-200 transition-colors text-sm">Education & Inspiration</button></li>
@@ -1477,18 +1504,24 @@ Sunday: Closed</p>
                     <h4 class="text-lg font-bold mb-4">Contact Info</h4>
                     <div class="space-y-3 text-amber-200">
                         <div>
-                            <a href="https://maps.google.com/?q=123+Oduduwa+Street,+Ile-Ife,+Nigeria" target="_blank" rel="noopener noreferrer" class="transition-colors">
-                                📍 123 Oduduwa Street, Ile-Ife, Nigeria
+                             
+                            <a href="https://maps.google.com/?q=29+Salau+Rasaq+street+Ikorodu+Lagos+State" target="_blank" rel="noopener noreferrer" class="transition-colors">
+                                📍 29, Salau Rasaq street, Ikorodu, Lagos State
                             </a>
                         </div>
                         <div>
-                            <a href="tel:+2348000000000" class="transition-colors">
-                                📞 +234 800 000 0000
+                             
+                            <a href="tel:+2348100355606" class="transition-colors block">
+                                📞 +234 810 035 5606
+                            </a>
+                            <a href="tel:+2349022089999" class="transition-colors block">
+                                📞 +234 902 208 9999
                             </a>
                         </div>
                         <div>
-                            <a href="mailto:info@omooduduwa.org?subject=Inquiry%20from%20Website" class="transition-colors">
-                                ✉️ info@omooduduwa.org
+                             
+                            <a href="mailto:omooduduwaheritage@gmail.com?subject=Inquiry%20from%20Website" class="transition-colors">
+                                ✉️ omooduduwaheritage@gmail.com
                             </a>
                         </div>
                         <div>🕒 Mon-Fri: 9am-5pm</div>
@@ -1509,24 +1542,747 @@ Sunday: Closed</p>
         let isMobileMenuOpen = false;
 
         // Testimonials data
+        // 
         const testimonials = [
             {
-                text: "Omo Oduduwa Global Heritage has transformed how we experience Yoruba culture. Their events are breathtaking!",
-                author: "Adeola Bankole",
-                role: "Cultural Enthusiast",
-                initials: "AB"
+                text: "The work of Omo Oduduwa Global Heritage in preserving our cultural heritage is commendable and deserves our full support.",
+                author: "Otunba Samson A.Agboola",
+                role: "SSG to Ileoluji Okeigbo Local Government",
+                initials: "SA"
             },
             {
-                text: "The preservation work they do is invaluable. Our children will thank us for supporting this organization.",
-                author: "Dr. Funke Adebayo",
-                role: "Historian & Educator",
+                text: "I commend the efforts of Omo Oduduwa Global Heritage in promoting and preserving our rich Yoruba cultural heritage for future generations.",
+                author: "Oba Adeyeye Enitan Ogunwusi",
+                role: "Ooni of Ife, The Royal Grandfather",
+                initials: "OO"
+            },
+            {
+                text: "This organization is doing exceptional work in cultural preservation. I fully support their mission and encourage others to do the same.",
+                author: "Hon. Engr. Festus Adefiranye",
+                role: "MHR, Ileoluji/Okeigbo/Odigbo",
                 initials: "FA"
             },
             {
-                text: "As an artist, I've found a true home here. The support and platform they provide is unmatched.",
-                author: "Tunde Ogunlana",
-                role: "Visual Artist",
-                initials: "TO"
+                text: "Omo Oduduwa Global Heritage is a beacon of cultural excellence. Their dedication to our heritage is truly inspiring.",
+                author: "Prince Tunde Fisayo",
+                role: "Chairman, AURORA",
+                initials: "TF"
+            }
+        ];
+
+        // Navigation functions
+        function scrollToSection(sectionId) {
+            // Hide all learn more pages
+            document.querySelectorAll('.learn-more-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show main content
+            document.getElementById('main-content').style.display = 'block';
+            
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const navbarHeight = 80;
+                const elementPosition = section.offsetTop - navbarHeight;
+                
+                window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth'
+                });
+                
+                updateActiveNavItem(sectionId);
+                closeMobileMenu();
+            }
+        }
+
+        function updateActiveNavItem(sectionId) {
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            const activeItem = document.querySelector(`[data-section="${sectionId}"]`);
+            if (activeItem) {
+                activeItem.classList.add('active');
+            }
+        }
+
+        function toggleMobileMenu() {
+            isMobileMenuOpen = !isMobileMenuOpen;
+            const mobileMenu = document.getElementById('mobile-menu');
+            const line1 = document.getElementById('menu-line-1');
+            const line2 = document.getElementById('menu-line-2');
+            const line3 = document.getElementById('menu-line-3');
+            
+            if (isMobileMenuOpen) {
+                mobileMenu.classList.add('open');
+                line1.style.transform = 'rotate(45deg) translateY(6px)';
+                line2.style.opacity = '0';
+                line3.style.transform = 'rotate(-45deg) translateY(-6px)';
+            } else {
+                mobileMenu.classList.remove('open');
+                line1.style.transform = 'none';
+                line2.style.opacity = '1';
+                line3.style.transform = 'none';
+            }
+        }
+
+        function closeMobileMenu() {
+            isMobileMenuOpen = false;
+            const mobileMenu = document.getElementById('mobile-menu');
+            const line1 = document.getElementById('menu-line-1');
+            const line2 = document.getElementById('menu-line-2');
+            const line3 = document.getElementById('menu-line-3');
+            
+            mobileMenu.classList.remove('open');
+            line1.style.transform = 'none';
+            line2.style.opacity = '1';
+            line3.style.transform = 'none';
+        }
+
+        // Learn More functions
+        function showLearnMore(page) {
+            // Hide main content
+            document.getElementById('main-content').style.display = 'none';
+            
+            // Hide all learn more pages
+            document.querySelectorAll('.learn-more-page').forEach(p => {
+                p.classList.remove('active');
+            });
+            
+            // Show selected page
+            const targetPage = document.getElementById(`learn-more-${page}`);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function returnToHome() {
+            // Hide all learn more pages
+            document.querySelectorAll('.learn-more-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show main content
+            document.getElementById('main-content').style.display = 'block';
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            updateActiveNavItem('home');
+        }
+
+        // Testimonials functions
+        function setTestimonial(index) {
+            currentTestimonial = index;
+            const testimonial = testimonials[index];
+            
+            // Update main testimonial display
+            document.getElementById('testimonial-text').textContent = testimonial.text;
+            document.getElementById('testimonial-author').textContent = testimonial.author;
+            document.getElementById('testimonial-role').textContent = testimonial.role;
+            document.getElementById('testimonial-avatar').textContent = testimonial.initials;
+            
+            // Update dots
+            document.querySelectorAll('.testimonial-dot').forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.remove('bg-gray-300');
+                    dot.classList.add('bg-amber-600', 'scale-125');
+                } else {
+                    dot.classList.remove('bg-amber-600', 'scale-125');
+                    dot.classList.add('bg-gray-300');
+                }
+            });
+            
+            // Update cards
+            document.querySelectorAll('.testimonial-card').forEach((card, i) => {
+                if (i === index) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+        }
+
+        // Auto-advance testimonials
+        function autoAdvanceTestimonials() {
+            setInterval(() => {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                setTestimonial(currentTestimonial);
+            }, 5000);
+        }
+
+        // Donation functions
+        function selectDonationAmount(amount, button) {
+            selectedDonationAmount = amount;
+            
+            // Update button styles
+            document.querySelectorAll('.donation-amount-btn').forEach(btn => {
+                btn.classList.remove('border-red-500', 'bg-red-50', 'shadow-lg');
+                btn.classList.add('border-red-200');
+            });
+            
+            button.classList.remove('border-red-200');
+            button.classList.add('border-red-500', 'bg-red-50', 'shadow-lg');
+            
+            // Show/hide custom amount input
+            const customAmountDiv = document.getElementById('custom-amount');
+            if (amount === 'Other') {
+                customAmountDiv.classList.remove('hidden');
+            } else {
+                customAmountDiv.classList.add('hidden');
+                // Clear custom amount input
+                document.getElementById('custom-amount-input').value = '';
+            }
+        }
+
+        function handleDonationSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('donation-name').value.trim();
+            const email = document.getElementById('donation-email').value.trim();
+            const phone = document.getElementById('donation-phone').value.trim();
+            const customAmount = document.getElementById('custom-amount-input').value.trim();
+            
+            const errorDiv = document.getElementById('donation-error');
+            const submitBtn = document.getElementById('donation-submit');
+            
+            // Clear previous errors
+            errorDiv.classList.add('hidden');
+            errorDiv.textContent = '';
+            
+            // Validation
+            if (!name || !email || !selectedDonationAmount) {
+                errorDiv.textContent = 'Please fill in all required fields.';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                errorDiv.textContent = 'Please enter a valid email address.';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+            
+            if (selectedDonationAmount === 'Other' && !customAmount) {
+                errorDiv.textContent = 'Please enter a custom donation amount.';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+            
+            // Show loading state
+            submitBtn.textContent = 'Processing...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Show success message
+                document.getElementById('donation-form').classList.add('hidden');
+                document.getElementById('donation-success').classList.remove('hidden');
+                
+                // Reset form
+                document.getElementById('donation-form').reset();
+                selectedDonationAmount = '';
+                document.querySelectorAll('.donation-amount-btn').forEach(btn => {
+                    btn.classList.remove('border-red-500', 'bg-red-50', 'shadow-lg');
+                    btn.classList.add('border-red-200');
+                });
+                document.getElementById('custom-amount').classList.add('hidden');
+                
+                // Reset button
+                submitBtn.textContent = 'Complete Donation';
+                submitBtn.disabled = false;
+            }, 2000);
+        }
+
+        // Contact form functions
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const message = document.getElementById('contact-message').value.trim();
+            
+            const errorDiv = document.getElementById('contact-error');
+            const submitBtn = document.getElementById('contact-submit');
+            
+            // Clear previous errors
+            errorDiv.classList.add('hidden');
+            errorDiv.textContent = '';
+            
+            // Validation
+            if (!name || !email || !message) {
+                errorDiv.textContent = 'Please fill in all required fields.';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                errorDiv.textContent = 'Please enter a valid email address.';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Show success message
+                document.getElementById('contact-form').classList.add('hidden');
+                document.getElementById('contact-success').classList.remove('hidden');
+                
+                // Reset form
+                document.getElementById('contact-form').reset();
+                
+                // Reset button
+                submitBtn.textContent = 'Send Message';
+                submitBtn.disabled = false;
+            }, 2000);
+        }
+
+        function resetContactForm() {
+            document.getElementById('contact-form').classList.remove('hidden');
+            document.getElementById('contact-success').classList.add('hidden');
+        }
+
+        // Utility functions
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function copyToClipboard(text, label) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert(`${label} copied to clipboard!`);
+                }).catch(() => {
+                    fallbackCopyToClipboard(text, label);
+                });
+            } else {
+                fallbackCopyToClipboard(text, label);
+            }
+        }
+
+        function fallbackCopyToClipboard(text, label) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert(`${label} copied to clipboard!`);
+        }
+
+        function copyAllAccountDetails() {
+            const allDetails = `Account Name: Omo Oduduwa Global Heritage Ltd
+Bank Name: First Bank of Nigeria
+Account Number: 2034567890
+Sort Code: 011-152-003`;
+            copyToClipboard(allDetails, 'All Account Details');
+        }
+
+        // Intersection Observer for active section detection
+        function setupIntersectionObserver() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -60% 0px',
+                threshold: 0
+            };
+
+            const observerCallback = (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        updateActiveNavItem(sectionId);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            // Observe all main sections
+            const sections = ['home', 'commitments', 'events', 'testimonials', 'membership', 'donate', 'contact'];
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    observer.observe(section);
+                }
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start testimonial auto-advance
+            autoAdvanceTestimonials();
+            
+            // Setup intersection observer
+            setupIntersectionObserver();
+            
+            // Set initial active nav item
+            updateActiveNavItem('home');
+            
+            console.log('Yoruba Culture Website initialized successfully!');
+        });
+
+        // Handle scroll for navbar styling
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.5rem 0';
+            } else {
+                navbar.style.padding = '1rem 0';
+            }
+        });
+    </script>
+     
+    <div id="learn-more-chairman" class="learn-more-page">
+        <div class="container py-20">
+            <button onclick="returnToHome()" class="mb-8 px-6 py-3 bg-amber-600 text-white font-semibold rounded-full transition-all">← Back to Home</button>
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-6xl font-bold text-amber-900 mb-4 font-display">Meet Our Chairman</h1>
+                <h2 class="text-3xl md:text-4xl font-bold text-teal-700 mb-4">Historian Oyejide Olatunji</h2>
+                <p class="text-2xl text-amber-600 font-semibold mb-4">The Colossus of African Arts</p>
+                <p class="text-xl text-gray-700 max-w-4xl mx-auto">Popularly known as Oloke, a passionate cultural historian and visionary leader dedicated to preserving and promoting Yoruba heritage.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <img src="https://placehold.co/600x800/amber-600/white?text=Historian+Oyejide+Olatunji" alt="Historian Oyejide Olatunji" class="rounded-2xl shadow-lg w-full">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-amber-900 mb-6">Background & Heritage</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Historian Oyejide Olatunji hails from Okeigbo, Ondo State - the historic hometown of D.O. Fagunwa, the pioneer of Yoruba literature and author of the legendary "Ogboju Ode ninu Igbo Irunmole" (The Forest of a Thousand Daemons).
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Growing up in this culturally rich environment, Oyejide developed a deep connection to Yoruba heritage from an early age. His passion for culture and history would later define his life's work and mission.
+                    </p>
+                    <div class="bg-amber-50 rounded-xl p-6 border border-amber-200">
+                        <h3 class="text-xl font-bold text-amber-900 mb-3">Quick Facts</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><strong>Hometown:</strong> Okeigbo, Ondo State</li>
+                            <li><strong>Also Known As:</strong> Oloke</li>
+                            <li><strong>Title:</strong> The Colossus of African Arts</li>
+                            <li><strong>Current Role:</strong> CEO, Omo Oduduwa Global Heritage Ltd</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg p-8 mb-16 border border-teal-200">
+                <h2 class="text-3xl font-bold text-amber-900 mb-6">Education & Academic Journey</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4">🎓</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-teal-700 mb-2">Primary Education</h3>
+                            <p class="text-gray-700">Saint Gabriel Primary School, Okeigbo - where his educational foundation was laid in his culturally rich hometown.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4">📚</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-teal-700 mb-2">Secondary Education</h3>
+                            <p class="text-gray-700">Okeigbo Grammar School - completed his secondary education in 1994, after which he relocated to Lagos State to pursue higher education and career opportunities.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4">🎯</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-teal-700 mb-2">Higher Education - Business Studies</h3>
+                            <p class="text-gray-700">Lagos State Polytechnic - studied Business Studies, gaining valuable knowledge in business management and entrepreneurship.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4">🏛️</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-teal-700 mb-2">University Education - History & International Relations</h3>
+                            <p class="text-gray-700">Obafemi Awolowo University - pursued his passion for history and culture by studying History and International Relations, deepening his understanding of cultural heritage and global perspectives.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-teal-50 to-amber-50 rounded-2xl shadow-lg p-8 mb-16 border border-teal-200">
+                <h2 class="text-3xl font-bold text-amber-900 mb-6">Professional Career</h2>
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl p-6 shadow-md">
+                        <h3 class="text-xl font-bold text-teal-700 mb-3">Mutual Benefits Assurance</h3>
+                        <p class="text-gray-700 mb-2"><strong>Position:</strong> Marketer</p>
+                        <p class="text-gray-700">Began his professional career in the insurance industry, developing strong marketing and client relationship skills.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-md">
+                        <h3 class="text-xl font-bold text-teal-700 mb-3">Portal Realties Ltd</h3>
+                        <p class="text-gray-700 mb-2"><strong>Initial Position:</strong> Marketer</p>
+                        <p class="text-gray-700 mb-2"><strong>Current Position:</strong> Branch Manager, Port Harcourt</p>
+                        <p class="text-gray-700">Demonstrated exceptional leadership and business acumen, earning a promotion to Branch Manager overseeing operations in Port Harcourt.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-md">
+                        <h3 class="text-xl font-bold text-teal-700 mb-3">Omo Oduduwa Global Heritage Ltd</h3>
+                        <p class="text-gray-700 mb-2"><strong>Position:</strong> Chief Executive Officer (CEO)</p>
+                        <p class="text-gray-700">Founded and leads the organization dedicated to preserving and promoting Yoruba cultural heritage globally.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg p-8 mb-16 border border-amber-200">
+                <h2 class="text-3xl font-bold text-amber-900 mb-6">Leadership Roles & Affiliations</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-amber-50 rounded-xl p-6">
+                        <div class="text-3xl mb-3">🎭</div>
+                        <h3 class="text-xl font-bold text-amber-900 mb-2">CEO, Omo Oduduwa Global Heritage Ltd</h3>
+                        <p class="text-gray-700">Leading the organization's mission to preserve and celebrate Yoruba cultural heritage through education, events, and community engagement.</p>
+                    </div>
+                    <div class="bg-teal-50 rounded-xl p-6">
+                        <div class="text-3xl mb-3">📢</div>
+                        <h3 class="text-xl font-bold text-teal-700 mb-2">PRO, Okeigbo Valued Friends</h3>
+                        <p class="text-gray-700">Serves as Public Relations Officer for the Okeigbo community association, maintaining strong ties with his hometown.</p>
+                    </div>
+                    <div class="bg-green-50 rounded-xl p-6">
+                        <div class="text-3xl mb-3">🌍</div>
+                        <h3 class="text-xl font-bold text-green-700 mb-2">Associate Member, Amnesty International (USA)</h3>
+                        <p class="text-gray-700">Committed to human rights and social justice on a global scale through his association with Amnesty International.</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-6">
+                        <div class="text-3xl mb-3">🤝</div>
+                        <h3 class="text-xl font-bold text-purple-700 mb-2">Member, Okeigbo Day Committee (2019)</h3>
+                        <p class="text-gray-700">Actively participated in organizing community celebrations and cultural events for his hometown.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-amber-50 to-teal-50 rounded-2xl shadow-lg p-8 mb-16 border border-amber-200">
+                <h2 class="text-3xl font-bold text-amber-900 mb-6">Notable Achievements</h2>
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-amber-600">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4">🏆</div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-amber-900 mb-3">D.O. Fagunwa Memorial Lecture (2012)</h3>
+                                <p class="text-gray-700 mb-4">
+                                    Organized a landmark memorial lecture in honor of D.O. Fagunwa, the pioneer of Yoruba literature, in his hometown of Okeigbo. This prestigious event brought together distinguished speakers and cultural leaders.
+                                </p>
+                                <div class="bg-amber-50 rounded-lg p-4">
+                                    <p class="text-gray-700 mb-2"><strong>Speaker of the Day:</strong> Late Professor Sola Olowu</p>
+                                    <p class="text-gray-700"><strong>Chairman of the Event:</strong> Mr. Tayo Oyetibo, SAN (Senior Advocate of Nigeria)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-teal-600">
+                        <div class="flex items-start">
+                            <div class="text-4xl mr-4">🎉</div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-teal-700 mb-3">Okeigbo Day Committee (2019)</h3>
+                                <p class="text-gray-700">
+                                    Served as a key member of the Okeigbo Day organizing committee, helping to plan and execute cultural celebrations that brought the community together and showcased Okeigbo's rich heritage.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg p-8 mb-16 border border-amber-200">
+                <h2 class="text-3xl font-bold text-amber-900 mb-6">Passion & Philosophy</h2>
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-amber-50 to-teal-50 rounded-xl p-8 border border-amber-200">
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">❤️</div>
+                            <h3 class="text-2xl font-bold text-amber-900 mb-4">A Life Devoted to Culture</h3>
+                        </div>
+                        <blockquote class="text-xl text-gray-800 italic leading-relaxed text-center mb-6 font-cultural">
+                            "It goes from interest to passion and passion to obsession..."
+                        </blockquote>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Historian Oyejide Olatunji is deeply committed and devoted to showcasing and promoting Nigerian art and culture, with a special focus on Yoruba heritage. His interest in art and culture dates back to his undergraduate days at Obafemi Awolowo University, where he discovered that his life's purpose was intrinsically tied to cultural preservation and promotion.
+                        </p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-amber-50 rounded-xl p-6 text-center">
+                            <div class="text-4xl mb-3">🎨</div>
+                            <h4 class="text-lg font-bold text-amber-900 mb-2">Cultural Advocacy</h4>
+                            <p class="text-gray-700">Championing Yoruba arts and traditions on local and global stages</p>
+                        </div>
+                        <div class="bg-teal-50 rounded-xl p-6 text-center">
+                            <div class="text-4xl mb-3">📖</div>
+                            <h4 class="text-lg font-bold text-teal-700 mb-2">Historical Preservation</h4>
+                            <p class="text-gray-700">Documenting and safeguarding cultural heritage for future generations</p>
+                        </div>
+                        <div class="bg-green-50 rounded-xl p-6 text-center">
+                            <div class="text-4xl mb-3">🌍</div>
+                            <h4 class="text-lg font-bold text-green-700 mb-2">Global Outreach</h4>
+                            <p class="text-gray-700">Sharing Yoruba culture with the world through innovative programs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-amber-100 to-teal-100 rounded-2xl p-8 border border-amber-300 text-center">
+                <h3 class="text-3xl font-bold text-amber-900 mb-4">Join Us in Our Mission</h3>
+                <p class="text-lg text-gray-700 mb-6 max-w-3xl mx-auto">
+                    Under the visionary leadership of Historian Oyejide Olatunji, Omo Oduduwa Global Heritage continues to grow and make a lasting impact on cultural preservation. Join us in celebrating and preserving Yoruba heritage for generations to come.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('membership')" class="px-8 py-3 bg-amber-600 text-white font-semibold rounded-full transition-all transform">
+                        Become a Member
+                    </button>
+                    <button onclick="scrollToSection('contact')" class="px-8 py-3 bg-teal-600 text-white font-semibold rounded-full transition-all transform">
+                        Get in Touch
+                    </button>
+                    <button onclick="scrollToSection('donate')" class="px-8 py-3 bg-green-600 text-white font-semibold rounded-full transition-all transform">
+                        Support Our Work
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="learn-more-preservation" class="learn-more-page">
+        <div class="container py-20">
+            <button onclick="returnToHome()" class="mb-8 px-6 py-3 bg-amber-600 text-white font-semibold rounded-full transition-all">← Back to Home</button>
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-6xl font-bold text-amber-900 mb-4 font-display">Cultural Preservation</h1>
+                <p class="text-xl text-gray-700 max-w-4xl mx-auto">Safeguarding the rich heritage of Yoruba culture for future generations through documentation, conservation, and community engagement.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold text-amber-900 mb-6">Our Preservation Mission</h2>
+                    <p class="text-lg text-gray-700 mb-6">We believe that cultural heritage is the foundation of identity and community. Our preservation efforts focus on documenting oral traditions, protecting sacred sites, and ensuring that traditional practices continue to thrive in modern contexts.</p>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start"><span class="text-amber-600 mr-3">•</span>Oral history documentation with community elders</li>
+                        <li class="flex items-start"><span class="text-amber-600 mr-3">•</span>Digital archiving of cultural artifacts and practices</li>
+                        <li class="flex items-start"><span class="text-amber-600 mr-3">•</span>Traditional craft and skill preservation workshops</li>
+                        <li class="flex items-start"><span class="text-amber-600 mr-3">•</span>Sacred site protection and restoration projects</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="https://placehold.co/600x400/amber-600/white?text=Cultural+Preservation" alt="Cultural Preservation" class="rounded-2xl shadow-lg w-full">
+                </div>
+            </div>
+            <div class="bg-amber-50 rounded-2xl p-8 border border-amber-200">
+                <h3 class="text-2xl font-bold text-amber-900 mb-4">Get Involved in Preservation</h3>
+                <p class="text-gray-700 mb-6">Join our preservation efforts and help safeguard Yoruba cultural heritage for future generations.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="scrollToSection('contact')" class="px-8 py-3 bg-amber-600 text-white font-semibold rounded-full transition-all">Contact Us</button>
+                    <button onclick="scrollToSection('donate')" class="px-8 py-3 bg-teal-600 text-white font-semibold rounded-full transition-all">Support Our Work</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     Footer 
+    <footer class="bg-amber-900 text-white py-12">
+        <div class="container">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/60x60/amber-600/white?text=OO" alt="Omo Oduduwa Logo" class="w-12 h-12 rounded-full border-2 border-amber-300 mr-3">
+                        <h3 class="text-2xl font-bold">Omo Oduduwa</h3>
+                    </div>
+                    <p class="text-amber-200 mb-4">
+                        Preserving the rich cultural heritage of the Yoruba people while fostering creativity, diversity, and community engagement.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/2348100355606?text=Hello%20Omo%20Oduduwa%20Global%20Heritage" target="_blank" rel="noopener noreferrer" title="WhatsApp" class="w-10 h-10 bg-amber-800 rounded-full flex items-center justify-center transition-all transform">📱</a>
+                        <a href="https://facebook.com/omooduduwa" target="_blank" rel="noopener noreferrer" title="Facebook" class="w-10 h-10 bg-amber-800 rounded-full flex items-center justify-center transition-all transform">📘</a>
+                        <a href="https://instagram.com/omooduduwa" target="_blank" rel="noopener noreferrer" title="Instagram" class="w-10 h-10 bg-amber-800 rounded-full flex items-center justify-center transition-all transform">📸</a>
+                        <a href="https://youtube.com/@omooduduwa" target="_blank" rel="noopener noreferrer" title="YouTube" class="w-10 h-10 bg-amber-800 rounded-full flex items-center justify-center transition-all transform">🎬</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><button onclick="scrollToSection('home')" class="text-amber-200 transition-colors">Home</button></li>
+                        <li><button onclick="showLearnMore('chairman')" class="text-amber-200 transition-colors">Our Chairman</button></li>
+                        <li><button onclick="scrollToSection('commitments')" class="text-amber-200 transition-colors">Commitments</button></li>
+                        <li><button onclick="scrollToSection('events')" class="text-amber-200 transition-colors">Events</button></li>
+                        <li><button onclick="scrollToSection('testimonials')" class="text-amber-200 transition-colors">Testimonials</button></li>
+                        <li><button onclick="scrollToSection('membership')" class="text-amber-200 transition-colors">Membership</button></li>
+                        <li><button onclick="scrollToSection('donate')" class="text-amber-200 transition-colors">Donate</button></li>
+                        <li><button onclick="scrollToSection('contact')" class="text-amber-200 transition-colors">Contact</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Commitments</h4>
+                    <ul class="space-y-2">
+                        <li><button onclick="showLearnMore('chairman')" class="text-amber-200 transition-colors text-sm">Meet Our Chairman</button></li>
+                        <li><button onclick="showLearnMore('preservation')" class="text-amber-200 transition-colors text-sm">Preservation</button></li>
+                        <li><button onclick="showLearnMore('diversity')" class="text-amber-200 transition-colors text-sm">Diversity & Inclusion</button></li>
+                        <li><button onclick="showLearnMore('education')" class="text-amber-200 transition-colors text-sm">Education & Inspiration</button></li>
+                        <li><button onclick="showLearnMore('artists')" class="text-amber-200 transition-colors text-sm">Artists & Creators</button></li>
+                        <li><button onclick="showLearnMore('community')" class="text-amber-200 transition-colors text-sm">Community Engagement</button></li>
+                        <li><button onclick="showLearnMore('innovation')" class="text-amber-200 transition-colors text-sm">Innovation & Responsibility</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <div class="space-y-3 text-amber-200">
+                        <div>
+                             
+                            <a href="https://maps.google.com/?q=29+Salau+Rasaq+street+Ikorodu+Lagos+State" target="_blank" rel="noopener noreferrer" class="transition-colors">
+                                📍 29, Salau Rasaq street, Ikorodu, Lagos State
+                            </a>
+                        </div>
+                        <div>
+                             
+                            <a href="tel:+2348100355606" class="transition-colors block">
+                                📞 +234 810 035 5606
+                            </a>
+                            <a href="tel:+2349022089999" class="transition-colors block">
+                                📞 +234 902 208 9999
+                            </a>
+                        </div>
+                        <div>
+                             
+                            <a href="mailto:omooduduwaheritage@gmail.com?subject=Inquiry%20from%20Website" class="transition-colors">
+                                ✉️ omooduduwaheritage@gmail.com
+                            </a>
+                        </div>
+                        <div>🕒 Mon-Fri: 9am-5pm</div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-amber-800 mt-8 pt-8 text-center text-amber-300">
+                <p>&copy; 2025 Omo Oduduwa Global Heritage Ltd. All rights reserved.</p>
+                <p class="text-sm mt-2">Preserving culture, inspiring generations.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global state
+        let currentTestimonial = 0;
+        let selectedDonationAmount = '';
+        let isMobileMenuOpen = false;
+
+        // Testimonials data
+        // 
+        const testimonials = [
+            {
+                text: "The work of Omo Oduduwa Global Heritage in preserving our cultural heritage is commendable and deserves our full support.",
+                author: "Otunba Samson A.Agboola",
+                role: "SSG to Ileoluji Okeigbo Local Government",
+                initials: "SA"
+            },
+            {
+                text: "I commend the efforts of Omo Oduduwa Global Heritage in promoting and preserving our rich Yoruba cultural heritage for future generations.",
+                author: "Oba Adeyeye Enitan Ogunwusi",
+                role: "Ooni of Ife, The Royal Grandfather",
+                initials: "OO"
+            },
+            {
+                text: "This organization is doing exceptional work in cultural preservation. I fully support their mission and encourage others to do the same.",
+                author: "Hon. Engr. Festus Adefiranye",
+                role: "MHR, Ileoluji/Okeigbo/Odigbo",
+                initials: "FA"
+            },
+            {
+                text: "Omo Oduduwa Global Heritage is a beacon of cultural excellence. Their dedication to our heritage is truly inspiring.",
+                author: "Prince Tunde Fisayo",
+                role: "Chairman, AURORA",
+                initials: "TF"
             }
         ];
 
